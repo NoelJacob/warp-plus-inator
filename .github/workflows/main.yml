@@ -11,5 +11,6 @@ jobs:
 
     steps:
       - uses: actions/checkout@v3 # This checks out the code from the repository
-      - run: |  # Multi-line command definition
-          python wp-plus.py
+      - env: # Or as an environment variable
+          ID: ${{ secrets.ID }}
+        run: python wp-plus.py

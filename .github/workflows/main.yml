@@ -1,0 +1,15 @@
+name: Hourly Workflow
+
+on:
+  workflow_dispatch:
+  schedule: # This triggers the workflow on a schedule
+    -  cron: '0 * * * *'  # This cron expression runs the workflow every hour
+
+jobs:
+  hourly_job: # Name of the job
+    runs-on: ubuntu-latest # This defines the runner OS
+
+    steps:
+      - uses: actions/checkout@v3 # This checks out the code from the repository
+      - run: |  # Multi-line command definition
+          python wp-plus.py

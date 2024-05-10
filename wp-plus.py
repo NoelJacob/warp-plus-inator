@@ -43,10 +43,10 @@ with open(proxy_file, 'r') as file:
 
 def newID():
 	while True:
-		referrer = input("[#] Enter the WARP+ ID: ")
-		user_input = input(f"[?] Your ID = ({referrer}) is it correct? (y/n):")
+		referrer = os.environ["ID"]
+		user_input = "y"
 		if user_input == "y":
-			save_id = input("[?] Do you want to save your ID? (y/n):")
+			save_id = "y"
 			if save_id == "y":
 				with open("referrer.txt", "w") as file:
 					file.write(referrer)

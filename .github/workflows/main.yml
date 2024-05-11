@@ -3,7 +3,7 @@ name: Hourly Workflow
 on:
   workflow_dispatch:
   schedule: # This triggers the workflow on a schedule
-    -  cron: '0 * * * *'  # This cron expression runs the workflow every hour
+    -  cron: '0 */6 * * *'  # This cron expression runs the workflow every hour
 
 jobs:
   hourly_job: # Name of the job
